@@ -129,3 +129,7 @@ section.bg-cloud + section.bg-sand,
 section.bg-sand + section.bg-cloud{border-top:1px solid var(--line)}
 section.bg-cloud + section.bg-cloud,
 section.bg-sand + section.bg-sand{border-top:1px solid var(--line)}
+
+/* lien discret vers l'espace de gestion */
+.foot-bottom .gestion{color:rgba(255,255,255,.30);text-decoration:none;transition:.2s}
+.foot-bottom .gestion:hover{color:rgba(255,255,255,.75)}
