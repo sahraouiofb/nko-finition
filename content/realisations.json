@@ -23,6 +23,12 @@
       "titre": "Intérieur",
       "commune": "Bayonne",
       "categorie": "deco"
+    },
+    {
+      "photo": "/photos/realisations/images-12-.jpg",
+      "titre": "Facade",
+      "commune": "Saint Lon les Mines",
+      "categorie": "ext"
     }
   ]
 }
