@@ -47,6 +47,12 @@
       "titre": "Cuisine",
       "commune": "Soustons",
       "categorie": "int"
+    },
+    {
+      "photo": "/photos/realisations/images-9-.jpg",
+      "titre": "Rénov",
+      "commune": "Morcenx",
+      "categorie": "reno"
     }
   ]
 }
