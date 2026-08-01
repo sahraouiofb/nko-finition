@@ -495,6 +495,8 @@
 
 
   (function(){
+    if(typeof L === 'undefined'){ var m=document.getElementById('map'); if(m) m.style.display='none'; return; }
+    try{
     const dax=[43.7102,-1.0530];
     const map=L.map('map',{scrollWheelZoom:false}).setView(dax,8);
     L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap © CARTO',maxZoom:19}).addTo(map);
@@ -502,6 +504,7 @@
     const icon=L.divIcon({className:'',html:'<div style="width:20px;height:20px;background:#c0603a;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.3)"></div>',iconSize:[20,20],iconAnchor:[10,10]});
     L.marker(dax,{icon}).addTo(map).bindPopup("<b>N'KO-FINITION</b><br>Dax (40100)");
     map.fitBounds(L.circle(dax,{radius:100000}).getBounds(),{padding:[20,20]});
+    }catch(e){ var m=document.getElementById('map'); if(m) m.style.display='none'; }
   })();
   (function(){
     var sec=document.getElementById('baSection'); if(!sec) return;
