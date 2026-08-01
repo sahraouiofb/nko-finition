@@ -52,3 +52,13 @@ collections:
               - { name: "apres", label: "Photo APRÈS les travaux", widget: "image", required: true }
               - { name: "titre", label: "Titre", widget: "string", hint: "Ex. : Salon rénové" }
               - { name: "commune", label: "Commune", widget: "string", hint: "Ex. : Mées" }
+
+      - name: "identite"
+        label: "③ Photos du site"
+        file: "content/identite.json"
+        format: "json"
+        description: "Les grandes photos fixes du site. Une seule fois, puis vous n'y touchez plus."
+        fields:
+          - { name: "hero", label: "Grande photo d'accueil (format vertical)", widget: "image", required: false, hint: "En haut de la page d'accueil, à droite du titre. Un beau chantier fini." }
+          - { name: "ambiance", label: "Photo d'ambiance (format paysage)", widget: "image", required: false, hint: "Au milieu de la page d'accueil. Vous ou un compagnon en train de peindre." }
+          - { name: "portrait", label: "Portrait du fondateur (format vertical)", widget: "image", required: false, hint: "Page À propos. Ousmane en tenue de travail, sur un chantier." }
