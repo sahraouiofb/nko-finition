@@ -64,6 +64,17 @@
   .hours .h{display:flex;justify-content:space-between;font-size:14.5px;padding:7px 0;color:var(--ink-soft);border-bottom:1px solid var(--sand)}
   .hours .h:last-child{border:0}
   @media (max-width:920px){.contact-grid{grid-template-columns:1fr}.frow{grid-template-columns:1fr}}
+  .contact-grid>*{min-width:0}
+  .form-card,.info-card,.hours{max-width:100%}
+  @media (max-width:560px){
+    .contact-sec{padding:52px 0 72px}
+    .form-card{padding:24px 18px;border-radius:16px}
+    .info-card{padding:24px 18px;border-radius:16px}
+    .hours{padding:20px 18px}
+    .chip span{font-size:13.5px;padding:9px 13px}
+    .chips{gap:7px}
+    .fld input,.fld select,.fld textarea{font-size:16px}
+  }
 
   .info-item a{color:#f0c4a8;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(240,196,168,.45);transition:.2s}
   .info-item a:hover{color:#fff;border-bottom-color:#fff}
