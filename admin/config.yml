@@ -1,0 +1,54 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "photos/realisations"
+public_folder: "/photos/realisations"
+
+locale: fr
+
+collections:
+  - name: "photos"
+    label: "Photos du site"
+    files:
+
+      - name: "chantiers"
+        label: "① Galerie — mes chantiers"
+        file: "content/realisations.json"
+        format: "json"
+        description: "Les photos qui s'affichent sur la page Réalisations. Ajoutez-en autant que vous voulez."
+        fields:
+          - name: "chantiers"
+            label: "Chantiers"
+            label_singular: "Chantier"
+            widget: "list"
+            summary: "{{fields.titre}} — {{fields.commune}}"
+            fields:
+              - { name: "photo", label: "Photo du chantier", widget: "image", required: true }
+              - { name: "titre", label: "Titre", widget: "string", hint: "Ex. : Salon repeint en blanc velours" }
+              - { name: "commune", label: "Commune", widget: "string", hint: "Ex. : Dax" }
+              - name: "categorie"
+                label: "Type de travaux"
+                widget: "select"
+                options:
+                  - { label: "Intérieur", value: "int" }
+                  - { label: "Façade & extérieur", value: "ext" }
+                  - { label: "Décoration", value: "deco" }
+                  - { label: "Rénovation", value: "reno" }
+
+      - name: "avantapres"
+        label: "② Avant / après"
+        file: "content/avant-apres.json"
+        format: "json"
+        description: "Deux photos du MÊME endroit, prises du même point de vue. La première paire de la liste s'affiche sur le site."
+        fields:
+          - name: "paires"
+            label: "Comparaisons avant / après"
+            label_singular: "Comparaison"
+            widget: "list"
+            summary: "{{fields.titre}} — {{fields.commune}}"
+            fields:
+              - { name: "avant", label: "Photo AVANT les travaux", widget: "image", required: true }
+              - { name: "apres", label: "Photo APRÈS les travaux", widget: "image", required: true }
+              - { name: "titre", label: "Titre", widget: "string", hint: "Ex. : Salon rénové" }
+              - { name: "commune", label: "Commune", widget: "string", hint: "Ex. : Mées" }

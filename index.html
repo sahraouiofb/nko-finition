@@ -1,0 +1,585 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>N'KO-FINITION — Artisan peintre à Dax | Intérieur, façade & décoration</title>
+<meta name="description" content="N'KO-FINITION, artisan peintre à Dax (40). Peinture intérieure et extérieure, façade, décoration. Devis gratuit dans un rayon de 100 km autour de Dax.">
+<link rel="canonical" href="https://VOTRE-DOMAINE.fr/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2724%27 fill=%27%23c0603a%27/%3E%3Cpath d=%27M32 72V28h10l16 26V28h10v44H58L42 46v26z%27 fill=%27%23fffdf9%27/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="N'KO-FINITION">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="N'KO-FINITION — Artisan peintre à Dax">
+<meta property="og:description" content="N'KO-FINITION, artisan peintre à Dax (40). Peinture intérieure et extérieure, façade, décoration. Devis gratuit dans un rayon de 100 km autour de Dax.">
+<meta property="og:url" content="https://VOTRE-DOMAINE.fr/">
+<meta property="og:image" content="https://VOTRE-DOMAINE.fr/photos/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#c0603a">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HousePainter",
+  "name": "N'KO-FINITION",
+  "description": "Artisan peintre à Dax (40) : peinture intérieure et extérieure, façade, décoration et revêtement de sol.",
+  "url": "https://VOTRE-DOMAINE.fr/",
+  "email": "nkofinition@gmail.com",
+  "telephone": "+33605802416",
+  "image": "https://VOTRE-DOMAINE.fr/photos/og-cover.jpg",
+  "priceRange": "€€",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "44 route de Montfort",
+    "postalCode": "40100",
+    "addressLocality": "Dax",
+    "addressRegion": "Landes",
+    "addressCountry": "FR"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 43.7102, "longitude": -1.0530 },
+  "areaServed": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 43.7102, "longitude": -1.0530 },
+    "geoRadius": "100000"
+  },
+  "knowsLanguage": "fr",
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5", "reviewCount": "3", "bestRating": "5" },
+  "review": [
+    { "@type": "Review", "author": { "@type": "Person", "name": "Jean-Pierre M." },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Travail d'une grande précision pour la peinture de notre salon et de notre cuisine. M. Souaré a été de très bon conseil pour le choix d'une peinture écologique. Le chantier est resté très propre." },
+    { "@type": "Review", "author": { "@type": "Person", "name": "Clara B." },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "Entreprise très professionnelle et réactive. Le devis gratuit a été envoyé rapidement et les finitions extérieures de notre maison sont impeccables." },
+    { "@type": "Review", "author": { "@type": "Person", "name": "Guillaume et Sophie R." },
+      "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+      "reviewBody": "La pose du parquet est impeccable, alignement parfait et finitions soignées autour des plinthes. Artisan très poli, ponctuel et à l'écoute." }
+  ],
+  "legalName": "SOUARE Ousmane",
+  "identifier": { "@type": "PropertyValue", "name": "SIREN", "value": "934590761" },
+  "sameAs": [
+    "https://www.facebook.com/61561914755370/",
+    "https://www.instagram.com/nkofinition/",
+    "https://www.tiktok.com/@nko.finition"
+  ],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Peinture intérieure" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Façade et peinture extérieure" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Décoration et enduits décoratifs" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Revêtement de sol" } }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="style.css">
+<style>
+  /* ---------- HERO éditorial clair ---------- */
+  .hero{background:var(--cloud);padding:158px 0 90px;position:relative;overflow:hidden}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+  .hero h1{font-size:clamp(42px,5.6vw,74px);letter-spacing:-.035em;line-height:1;margin:22px 0 0}
+  .hero .lead{font-size:clamp(17px,1.9vw,19px);color:var(--ink-soft);max-width:480px;margin:26px 0 34px;line-height:1.6}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+  .hero-visual{position:relative}
+  .hero-frame{aspect-ratio:4/5;border-radius:24px;overflow:hidden;box-shadow:var(--sh);position:relative}
+  .hero-frame .ph{width:100%;height:100%;border:0;border-radius:0}
+  .hero-frame img{width:100%;height:100%;object-fit:cover}
+  .hero-float{position:absolute;left:-22px;bottom:34px;background:var(--white);border-radius:16px;box-shadow:var(--sh);padding:16px 20px;display:flex;align-items:center;gap:13px;max-width:230px}
+  .hero-float .rc{width:44px;height:44px;border-radius:11px;background:var(--sand);display:flex;align-items:center;justify-content:center;color:var(--clay);flex:none}
+  .hero-float b{font-family:var(--disp);font-size:15px;display:block}
+  .hero-float span{font-size:12.5px;color:var(--ink-mut)}
+  .hero-strip{position:absolute;top:26px;right:-14px;background:var(--clay);color:var(--white);font-family:var(--disp);font-weight:700;font-size:13px;letter-spacing:.06em;padding:9px 16px;border-radius:999px;box-shadow:var(--sh-s)}
+  /* bande stats */
+  .hero-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;margin-top:72px}
+  .hero-stats .s{background:var(--cloud);padding:26px 24px}
+  .hero-stats .s b{font-family:var(--disp);font-size:34px;font-weight:800;color:var(--clay-d);letter-spacing:-.03em;display:block;line-height:1}
+  .hero-stats .s span{font-size:13.5px;color:var(--ink-mut);margin-top:8px;display:block}
+
+  /* ---------- bandeau marque ---------- */
+  .marquee{background:var(--sage-d);color:var(--cloud);padding:15px 0;overflow:hidden;white-space:nowrap}
+  .marquee-track{display:inline-flex;gap:52px;animation:marq 26s linear infinite;font-family:var(--disp);font-weight:600;font-size:15px}
+  .marquee-track span{display:inline-flex;align-items:center;gap:52px}
+  .marquee-track span::after{content:'✦';color:rgba(255,255,255,.55)}
+  @keyframes marq{to{transform:translateX(-50%)}}
+
+  /* ---------- intro ---------- */
+  .intro-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+  .intro h2{font-size:clamp(28px,3.6vw,42px);margin-bottom:22px}
+  .intro p{font-size:17px;color:var(--ink-soft);margin-bottom:16px}
+  .intro-media .ph{aspect-ratio:5/4;border-radius:20px;border:1px solid var(--line-2)}
+
+  /* ---------- prestations ---------- */
+  .prest-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .pcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:32px 30px;transition:.3s var(--ease);display:flex;flex-direction:column;min-height:240px}
+  .pcard:hover{transform:translateY(-5px);box-shadow:var(--sh-s);border-color:var(--clay-l)}
+  .pcard .num{font-family:var(--disp);font-size:13px;font-weight:700;color:var(--clay);letter-spacing:.08em}
+  .pcard h3{font-size:22px;margin:14px 0 11px}
+  .pcard p{font-size:14.5px;color:var(--ink-soft);line-height:1.6;flex:1}
+  .pcard .ar{margin-top:18px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line-2);display:flex;align-items:center;justify-content:center;color:var(--clay);transition:.3s var(--ease)}
+  .pcard:hover .ar{background:var(--clay);color:var(--white);border-color:var(--clay);transform:translate(3px,-3px)}
+  .pcard .ar svg{width:15px;height:15px}
+
+  /* ---------- vidéo patron ---------- */
+  .video-wrap{position:relative;border-radius:24px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:16/9;background:var(--sand-2)}
+  .video-wrap video{width:100%;height:100%;object-fit:cover}
+  .video-wrap .ph{width:100%;height:100%;border:0;border-radius:0}
+  .video-play{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;cursor:pointer;z-index:3}
+  .video-play .pbtn{width:84px;height:84px;border-radius:50%;background:rgba(255,253,249,.22);backdrop-filter:blur(8px);border:1.5px solid rgba(255,253,249,.7);display:flex;align-items:center;justify-content:center;transition:.3s var(--ease)}
+  .video-play:hover .pbtn{background:var(--clay);border-color:var(--clay);transform:scale(1.08)}
+  .video-play .pbtn svg{width:28px;height:28px;color:var(--white);margin-left:4px}
+  .video-play .pl{color:var(--ink);font-family:var(--disp);font-weight:600;font-size:15px;background:var(--white);padding:7px 16px;border-radius:999px;box-shadow:var(--sh-s)}
+  .video-cap{display:flex;align-items:center;gap:14px;margin-top:24px}
+  .video-cap .av{width:52px;height:52px;border-radius:50%;background:var(--sand);border:1px solid var(--line);display:flex;align-items:center;justify-content:center;color:var(--clay);flex:none}
+  .video-cap b{display:block;font-family:var(--disp);font-size:16px}
+  .video-cap span{font-size:14px;color:var(--ink-mut)}
+
+  /* ---------- avant/après ---------- */
+  .ba{position:relative;max-width:960px;margin:0 auto;border-radius:22px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:16/9;user-select:none;border:1px solid var(--line-2)}
+  .ba .layer{position:absolute;inset:0}.ba .layer .ph{width:100%;height:100%;border:0;border-radius:0}
+  .ba .after{clip-path:inset(0 0 0 50%)}
+  .ba .tag{position:absolute;top:18px;font-family:var(--disp);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(42,37,33,.78);color:var(--white);padding:6px 13px;border-radius:999px;backdrop-filter:blur(4px)}
+  .ba .tag.l{left:18px}.ba .tag.r{right:18px}
+  .ba .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--white);z-index:3;cursor:ew-resize}
+  .ba .handle .grip{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--white);box-shadow:var(--sh-s);display:flex;align-items:center;justify-content:center;color:var(--clay)}
+  .ba .handle .grip svg{width:20px;height:20px}
+  .ba-hint{text-align:center;color:var(--ink-mut);font-size:13px;margin-top:18px}
+
+  /* ---------- carte / zone ---------- */
+  .zone-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:52px;align-items:center}
+  .zone h2{font-size:clamp(28px,3.6vw,44px);margin:18px 0 18px}
+  .zone p{font-size:17px;color:var(--ink-soft);margin-bottom:24px}
+  .zone-tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
+  .zone-tags span{font-size:14px;padding:8px 15px;border-radius:999px;background:var(--white);border:1px solid var(--line);color:var(--ink-soft)}
+  #map{height:460px;border-radius:22px;box-shadow:var(--sh);border:1px solid var(--line-2);z-index:1}
+  .leaflet-container{font-family:var(--corps)}
+
+  /* ---------- avis ---------- */
+  .avis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .avis{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:30px}
+  .avis .q{font-family:var(--disp);font-size:44px;color:var(--clay);line-height:.6;height:24px}
+  .avis .stars{color:var(--clay);font-size:15px;letter-spacing:2px;margin:14px 0}
+  .avis p{font-size:15.5px;color:var(--ink-soft);margin-bottom:20px;line-height:1.6}
+  .avis .who{font-family:var(--disp);font-weight:600;font-size:14px}
+  .avis .who span{display:block;font-family:var(--corps);font-weight:400;color:var(--ink-mut);font-size:13px;margin-top:2px}
+
+  /* ---------- CTA ---------- */
+  .cta-box{background:var(--clay);border-radius:28px;padding:72px 48px;text-align:center;position:relative;overflow:hidden}
+  .cta-box::before{content:'';position:absolute;top:-40%;right:-8%;width:380px;height:380px;border-radius:50%;background:rgba(255,253,249,.09)}
+  .cta-box::after{content:'';position:absolute;bottom:-50%;left:-6%;width:320px;height:320px;border-radius:50%;background:rgba(255,253,249,.06)}
+  .cta-box h2{color:var(--white);font-size:clamp(30px,4.4vw,48px);margin-bottom:16px;position:relative}
+  .cta-box p{color:rgba(255,253,249,.9);font-size:18px;margin-bottom:32px;position:relative;max-width:520px;margin-left:auto;margin-right:auto}
+
+  @media (max-width:920px){
+    .hero-grid,.intro-grid,.zone-grid{grid-template-columns:1fr;gap:40px}
+    .hero-visual{order:-1}
+    .hero-stats{grid-template-columns:1fr 1fr}
+    .prest-grid,.avis-grid{grid-template-columns:1fr}
+    #map{height:360px}
+  }
+
+  .info-item a{color:#f0c4a8;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(240,196,168,.45);transition:.2s}
+  .info-item a:hover{color:#fff;border-bottom-color:#fff}
+  .footer li a{border-bottom:1px solid rgba(255,255,255,.22);transition:.2s}
+  .footer li a:hover{border-bottom-color:#fff}
+
+  /* curseur pinceau sur le comparateur uniquement */
+  .ba,.ba *{cursor:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cg transform='rotate(-30 18 18)'%3E%3Crect x='14' y='4' width='8' height='13' rx='2' fill='%23c0603a'/%3E%3Crect x='13' y='16' width='10' height='4' rx='1' fill='%239c4526'/%3E%3Crect x='16' y='20' width='4' height='11' rx='1.6' fill='%232c211b'/%3E%3C/g%3E%3C/svg%3E") 18 4, ew-resize}
+
+  /* témoignages */
+  .temoin{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:32px 30px;
+    box-shadow:var(--sh-s);display:flex;flex-direction:column}
+  .temoin .stars{color:var(--clay);font-size:16px;letter-spacing:3px;margin-bottom:16px}
+  .temoin p{font-size:16px;line-height:1.68;color:var(--ink-soft);margin-bottom:24px;flex:1}
+  .temoin .sig{display:flex;align-items:center;gap:13px;padding-top:20px;border-top:1px solid var(--line)}
+  .temoin .ini{width:44px;height:44px;border-radius:50%;background:var(--sand-2);color:var(--ink);
+    display:flex;align-items:center;justify-content:center;font-family:var(--disp);font-weight:700;font-size:14.5px;flex:none}
+  .temoin .sig b{display:block;font-family:var(--disp);font-size:15.5px}
+  .temoin .sig span{font-size:13.5px;color:var(--ink-mut)}
+  @media(max-width:980px){.avis-grid[style]{grid-template-columns:1fr 1fr!important}}
+  @media(max-width:680px){.avis-grid[style]{grid-template-columns:1fr!important}}
+
+  .trust{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:22px;
+    font-size:14.5px;color:var(--ink-soft)}
+  .trust .st{color:var(--clay);letter-spacing:2px;font-size:15px}
+  .trust b{font-family:var(--disp);font-size:16px;color:var(--ink)}
+  .trust .sep{width:1px;height:16px;background:var(--line-2)}
+  @media(max-width:520px){.trust .sep{display:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="wrap"><div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="N'KO-FINITION, accueil"><span class="plaque"><img src="photos/logo-nkofinition.png" alt="N'KO-FINITION"></span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Accueil</a>
+      <a href="realisations.html">Réalisations</a>
+      <a href="a-propos.html">À propos</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Devis gratuit</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div></div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <span class="eyebrow reveal in">Peintre à Dax · Intérieur, façade, décoration</span>
+        <h1 class="reveal in d1">Vous voulez que ce soit <span class="paint-word">bien fait<svg class="stroke" viewBox="0 0 300 60" preserveAspectRatio="none"><path d="M8 40 C 60 20, 120 46, 175 30 S 270 22, 292 34"/></svg></span>.</h1>
+        <p class="lead reveal in d2">Au prix annoncé, dans les délais, sans avoir à repasser derrière. C'est tout ce que vous demandez, et c'est exactement ce que nous faisons depuis Dax : peinture intérieure, façades, décoration, sols.</p>
+        <div class="trust reveal in d2">
+          <span class="st">★★★★★</span>
+          <b>5/5</b>
+          <span class="sep"></span>
+          <span>Devis et déplacement gratuits · Dax et 100 km alentour</span>
+        </div>
+        <div class="hero-cta reveal in d3">
+          <a href="contact.html" class="btn btn-primary">Demander un devis gratuit
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+          <a href="realisations.html" class="btn btn-ghost">Voir nos réalisations</a>
+        </div>
+        <div class="nuancier reveal in d3" aria-hidden="true">
+          <div class="sw" style="background:#c0603a"></div>
+          <div class="sw" style="background:#d98a63"></div>
+          <div class="sw" style="background:#e6dcc7"></div>
+          <div class="sw" style="background:#7e8c63"></div>
+          <div class="sw" style="background:#5f6d49"></div>
+          <div class="sw" style="background:#2c211b"></div>
+        </div>
+      </div>
+      <div class="hero-visual reveal in d2">
+        <div class="hero-frame">
+          <!-- Remplacez ce bloc .ph par : <img src="photos/hero.jpg" alt="Chantier N'KO-FINITION"> -->
+          <div class="ph">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21h18M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/></svg>
+            <div class="t">Photo chantier — format portrait</div>
+            <div class="d">Un bel intérieur fini ou une façade rénovée. Format vertical.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-stats reveal">
+      <div class="s"><b>5/5</b><span>Note des clients</span></div>
+      <div class="s"><b>100 km</b><span>Autour de Dax</span></div>
+      <div class="s"><b>100%</b><span>Devis gratuits</span></div>
+      <div class="s"><b>Dax</b><span>Ancré dans les Landes</span></div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee"><div class="marquee-track">
+  <span>Peinture intérieure</span><span>Façades & ravalement</span><span>Décoration</span><span>Revêtements de sol</span><span>Rénovation</span>
+  <span>Peinture intérieure</span><span>Façades & ravalement</span><span>Décoration</span><span>Revêtements de sol</span><span>Rénovation</span>
+</div></div>
+
+<!-- INTRO -->
+<section class="bg-cloud">
+  <div class="wrap">
+    <div class="intro-grid">
+      <div class="reveal">
+        <span class="eyebrow">L'atelier</span>
+        <h2 style="margin-top:16px">Le métier de peintre, fait avec exigence.</h2>
+        <p>N'KO-FINITION accompagne les particuliers et les professionnels de Dax et des Landes dans tous leurs projets de peinture et de décoration. De la préparation des supports à la dernière couche, chaque étape est traitée avec la même rigueur.</p>
+        <p>Notre conviction : un beau chantier se voit dans les détails, et se prépare bien avant le premier coup de rouleau.</p>
+        <a href="a-propos.html" class="btn btn-ghost" style="margin-top:12px">Faire connaissance
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="intro-media reveal d1">
+        <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg><div class="t">Photo d'ambiance — peintre au travail</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESTATIONS -->
+<section class="bg-sand">
+  <div class="wrap">
+    <div class="head reveal"><span class="eyebrow">Nos prestations</span><h2>Un savoir-faire complet</h2><p>Six métiers, un même principe : ce qui ne se voit pas compte autant que ce qui se voit.</p></div>
+    <div class="prest-grid">
+      <div class="pcard reveal"><div class="num">01</div><h3>Peinture intérieure</h3><p>Murs, plafonds, boiseries. Finitions mate, velours ou satinée, avec une préparation qui garantit un rendu net et durable.</p><div class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></div></div>
+      <div class="pcard reveal d1"><div class="num">02</div><h3>Façade & ravalement</h3><p>Nettoyage, traitement et mise en peinture des façades, avant-toits et boiseries, avec des produits adaptés au climat landais.</p><div class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></div></div>
+      <div class="pcard reveal d2"><div class="num">03</div><h3>Décoration & conseil</h3><p>Harmonies de couleurs, papier peint, effets décoratifs. On vous guide vers ce qui vous ressemble, sans jamais pousser au superflu.</p><div class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></div></div>
+      <div class="pcard reveal"><div class="num">04</div><h3>Préparation des supports</h3><p>Rebouchage, ponçage, enduit, lissage. La finition tient à la préparation : c'est là que se joue la qualité d'un chantier.</p><div class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></div></div>
+      <div class="pcard reveal d1"><div class="num">05</div><h3>Revêtements de sol</h3><p>Préparation et pose de sols souples. Un intérieur repeint mérite un sol à la hauteur du reste.</p><div class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></div></div>
+      <div class="pcard reveal d2"><div class="num">06</div><h3>Rénovation complète</h3><p>Un logement à rafraîchir de fond en comble ? On coordonne les étapes pour un résultat homogène, pièce après pièce.</p><div class="ar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- VIDÉO -->
+<section class="bg-cloud" id="videoSection" style="display:none">
+  <div class="wrap">
+    <div class="head center reveal"><span class="eyebrow">Rencontre</span><h2>Le mot du fondateur</h2><p>Deux minutes pour savoir à qui vous confiez vos murs, et comment nous travaillons.</p></div>
+    <div class="video-wrap reveal d1" id="videoWrap">
+      <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M10 9l5 3-5 3z"/></svg><div class="t">Emplacement vidéo — le patron qui parle</div><div class="d">Une prise de parole face caméra (1 à 2 min). Format 16/9.</div></div>
+      <div class="video-play" id="videoPlay"><div class="pbtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><div class="pl">Lire la vidéo</div></div>
+    </div>
+    <div class="video-cap reveal d2">
+      <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 016-6h4a6 6 0 016 6v1"/></svg></div>
+      <div><b>Le fondateur de N'KO-FINITION</b>Ousmane SOUARE, fondateur</div>
+    </div>
+  </div>
+</section>
+
+<!-- AVANT/APRÈS -->
+<section class="bg-sand" id="baSection" style="display:none">
+  <div class="wrap">
+    <div class="head center reveal"><span class="eyebrow">Transformations</span><h2>Avant / après</h2><p>Faites glisser le curseur pour mesurer la différence.</p></div>
+    <div class="ba reveal d1" id="ba">
+      <div class="layer before"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-4 4 3 4-4 5 5"/></svg><div class="t">Photo « avant »</div></div></div>
+      <div class="layer after" id="baAfter"><div class="ph" style="background:linear-gradient(135deg,#efe8db,#e0d4bd)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-4 4 3 4-4 5 5"/></svg><div class="t">Photo « après »</div></div></div>
+      <span class="tag l">Avant</span><span class="tag r">Après</span>
+      <div class="handle" id="baHandle"><div class="grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg></div></div>
+    </div>
+    <p class="ba-hint">Remplacez les deux zones par une vraie paire avant/après d'un chantier.</p>
+  </div>
+</section>
+
+<!-- ZONE + CARTE -->
+<section class="bg-cloud">
+  <div class="wrap">
+    <div class="zone-grid">
+      <div class="reveal">
+        <span class="eyebrow">Zone d'intervention</span>
+        <h2>Dax et 100 km à la ronde</h2>
+        <p>Installés à Dax, nous intervenons dans les Landes, sur la côte, vers le Pays basque et le sud de la Gironde. Une maison à Saint-Paul-lès-Dax, un appartement à Bayonne, une façade à Mont-de-Marsan : le déplacement et le devis restent gratuits.</p>
+        <div class="zone-tags">
+          <span>Dax</span><span>Saint-Paul-lès-Dax</span><span>Narrosse</span><span>Saint-Vincent-de-Paul</span><span>Tercis-les-Bains</span><span>Soustons</span><span>Tartas</span><span>Pontonx</span><span>Mées</span>
+        </div>
+        <a href="contact.html" class="btn btn-primary">Vérifier ma commune
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="reveal d1"><div id="map"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ENGAGEMENTS -->
+<section class="bg-sand">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Nos engagements</span>
+      <h2>Ce sur quoi vous pouvez compter</h2>
+      <p>Pas de promesses en l'air : trois principes que nous appliquons sur chaque chantier, du plus petit au plus complet.</p>
+    </div>
+    <div class="avis-grid">
+      <div class="avis reveal">
+        <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3 style="font-size:19px;margin-bottom:10px">Un devis clair, et un prix qui ne bouge pas</h3>
+        <p>Nous venons voir le chantier, nous mesurons, et nous détaillons chaque poste. Vous savez ce que vous payez et pourquoi. Pas de supplément découvert en cours de route.</p>
+      </div>
+      <div class="avis reveal d1">
+        <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3 style="font-size:19px;margin-bottom:10px">Le soin de ce qui ne se voit pas</h3>
+        <p>Une peinture ne rattrape jamais un mur mal préparé. Rebouchage des fissures, ponçage, enduit de lissage : nous passons le temps qu'il faut sur ce qui disparaîtra sous la couleur. C'est ce travail invisible qui fait qu'un chantier tient dix ans au lieu de deux.</p>
+      </div>
+      <div class="avis reveal d2">
+        <div class="mark"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></div>
+        <h3 style="font-size:19px;margin-bottom:10px">Une date annoncée, une date tenue</h3>
+        <p>Vous êtes prévenu du jour où nous arrivons et du jour où nous terminons. Si un imprévu décale le chantier, vous l'apprenez de nous, pas en constatant que personne n'est venu.</p>
+      </div>
+    </div>
+
+</section>
+
+<!-- AVIS CLIENTS -->
+<section class="bg-cloud">
+  <div class="wrap">
+    <div class="head center reveal">
+      <span class="eyebrow">Avis clients</span>
+      <h2>Ils nous ont fait confiance</h2>
+      <p>Ce que disent les particuliers qui nous ont ouvert leur porte.</p>
+    </div>
+
+    <div class="avis-grid" style="grid-template-columns:repeat(3,1fr)">
+      <div class="temoin reveal">
+        <div class="stars">★★★★★</div>
+        <p>« Travail d'une grande précision pour la peinture de notre salon et de notre cuisine. M. Souaré a été de très bon conseil pour le choix d'une peinture écologique. Le chantier est resté très propre. Je recommande vivement N'Ko Finition à Dax ! »</p>
+        <div class="sig"><span class="ini">JP</span><div><b>Jean-Pierre M.</b><span>Dax</span></div></div>
+      </div>
+      <div class="temoin reveal d1">
+        <div class="stars">★★★★★</div>
+        <p>« Entreprise très professionnelle et réactive. Le devis gratuit a été envoyé rapidement et les finitions extérieures de notre maison sont impeccables. Un grand merci pour votre sérieux. »</p>
+        <div class="sig"><span class="ini">CB</span><div><b>Clara B.</b><span>Saint-Paul-lès-Dax</span></div></div>
+      </div>
+      <div class="temoin reveal d2">
+        <div class="stars">★★★★★</div>
+        <p>« Nous avons fait appel à N'Ko Finition pour la rénovation de nos sols et nous sommes ravis du résultat. La pose du parquet est impeccable, alignement parfait et finitions soignées autour des plinthes. Artisan très poli, ponctuel et à l'écoute. Un vrai professionnel à Dax ! »</p>
+        <div class="sig"><span class="ini">GS</span><div><b>Guillaume et Sophie R.</b><span>Mées</span></div></div>
+      </div>
+    </div>
+
+    <div class="reveal d3" style="margin-top:40px;text-align:center">
+      <p style="font-size:15px;color:var(--ink-soft);max-width:600px;margin:0 auto 20px">
+        Vous avez fait appel à nous ? Votre avis aide les prochains à se décider.
+      </p>
+      <a href="https://www.facebook.com/61561914755370/" target="_blank" rel="noopener" class="btn btn-ghost">
+        Laisser un avis sur Facebook
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 17L17 7M8 7h9v9"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+
+<!-- CTA -->
+<section class="bg-cloud" style="padding-bottom:120px">
+  <div class="wrap">
+    <div class="cta-box reveal">
+      <h2>Un projet ? Parlons-en.</h2>
+      <p>Décrivez votre chantier en quelques minutes. On revient vers vous avec un devis clair et gratuit.</p>
+      <a href="contact.html" class="btn btn-light">Demander mon devis gratuit
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <a href="index.html" class="logo" aria-label="N'KO-FINITION, accueil"><span class="plaque"><img src="photos/logo-nkofinition.png" alt="N'KO-FINITION"></span></a>
+        <p class="brandline">Artisan peintre à Dax. Intérieur, extérieur, façade et décoration dans les Landes, le Pays basque et le sud de la Gironde.</p>
+      </div>
+      <div><h4>Le site</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="realisations.html">Réalisations</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact & devis</a></li></ul></div>
+      <div><h4>Prestations</h4><ul><li>Peinture intérieure</li><li>Façade & ravalement</li><li>Décoration</li><li>Rénovation</li></ul></div>
+      <div><h4>Contact</h4><ul>
+        <li><a href="tel:+33605802416">06 05 80 24 16</a></li>
+        <li><a href="mailto:nkofinition@gmail.com">nkofinition@gmail.com</a></li>
+        <li>44 route de Montfort<br>40100 Dax</li>
+        <li><a href="https://www.facebook.com/61561914755370/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/nkofinition/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@nko.finition" target="_blank" rel="noopener">TikTok</a></li>
+      </ul></div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 N'KO-FINITION — E.I. SOUARE Ousmane · SIREN 934 590 761</span>
+      <span>Devis & déplacement gratuits · Dax et 100 km alentour</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  const nav=document.getElementById('nav');
+  const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>40);
+  onScroll();window.addEventListener('scroll',onScroll);
+  const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
+  burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
+  document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+
+  (function(){
+    const ba=document.getElementById('ba'),after=document.getElementById('baAfter'),handle=document.getElementById('baHandle');
+    let drag=false;
+    const set=x=>{const r=ba.getBoundingClientRect();let p=Math.max(0,Math.min(1,(x-r.left)/r.width));after.style.clipPath='inset(0 0 0 '+p*100+'%)';handle.style.left=p*100+'%';};
+    handle.addEventListener('mousedown',()=>drag=true);window.addEventListener('mouseup',()=>drag=false);
+    window.addEventListener('mousemove',e=>{if(drag)set(e.clientX)});
+    handle.addEventListener('touchstart',()=>drag=true,{passive:true});window.addEventListener('touchend',()=>drag=false);
+    window.addEventListener('touchmove',e=>{if(drag)set(e.touches[0].clientX)},{passive:true});
+    ba.addEventListener('click',e=>{if(!e.target.closest('.handle'))set(e.clientX)});
+  })();
+
+  (function(){
+    var sec=document.getElementById('videoSection'); if(!sec) return;
+    var wrap=document.getElementById('videoWrap');
+    var noms=['photos/patron.mp4','photos/fondateur.mp4','photos/video.mp4','photos/presentation.mp4'];
+
+    // 1) test par le lecteur vidéo : fonctionne aussi en ouverture locale (file://)
+    function testeVideo(url){
+      return new Promise(function(res){
+        var v=document.createElement('video'), fini=false;
+        var t=setTimeout(function(){ if(!fini){fini=true;res(false);} },5000);
+        v.onloadedmetadata=function(){ if(!fini){fini=true;clearTimeout(t);res(true);} };
+        v.onerror       =function(){ if(!fini){fini=true;clearTimeout(t);res(false);} };
+        v.preload='metadata'; v.src=url;
+      });
+    }
+    function testePoster(){
+      return new Promise(function(res){
+        var i=new Image();
+        i.onload=function(){res('photos/patron-poster.jpg')};
+        i.onerror=function(){res('')};
+        i.src='photos/patron-poster.jpg';
+      });
+    }
+
+    Promise.all(noms.map(testeVideo)).then(function(r){
+      var url=noms[r.indexOf(true)];
+      if(!url){
+        // rien de lisible : on masque UNIQUEMENT si on est bien sur un serveur.
+        // en ouverture locale (file://) on garde l'encadré visible.
+        if(location.protocol==='file:'){ sec.style.display=''; return; }
+        sec.remove(); return;
+      }
+      testePoster().then(function(poster){
+        wrap.innerHTML='<video id="bossVideo" controls playsinline preload="metadata"'
+          +(poster?' poster="'+poster+'"':'')
+          +' style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit">'
+          +'<source src="'+url+'" type="video/mp4">'
+          +'Votre navigateur ne peut pas lire cette vidéo.</video>';
+        sec.style.display='';
+        document.dispatchEvent(new Event('baPret'));
+      });
+    });
+  })();
+
+  (function(){
+    const dax=[43.7102,-1.0530];
+    const map=L.map('map',{scrollWheelZoom:false}).setView(dax,8);
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap © CARTO',maxZoom:19}).addTo(map);
+    L.circle(dax,{radius:100000,color:'#9c4526',weight:1.5,fillColor:'#c0603a',fillOpacity:.12}).addTo(map);
+    const icon=L.divIcon({className:'',html:'<div style="width:20px;height:20px;background:#c0603a;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.3)"></div>',iconSize:[20,20],iconAnchor:[10,10]});
+    L.marker(dax,{icon}).addTo(map).bindPopup("<b>N'KO-FINITION</b><br>Dax (40100)");
+    map.fitBounds(L.circle(dax,{radius:100000}).getBounds(),{padding:[20,20]});
+  })();
+</script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>if(window.netlifyIdentity){window.netlifyIdentity.on("init",u=>{if(!u){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});}});}
+  (function(){
+    var sec=document.getElementById('baSection'); if(!sec) return;
+    function garde(){ sec.style.display=''; document.dispatchEvent(new Event('baPret')); }
+    fetch('content/avant-apres.json',{cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(d){
+        var l=Array.isArray(d.paires)?d.paires:[];
+        var pr=l.find(function(x){return x && x.avant && x.apres});
+        if(!pr){ sec.remove(); return; }           // liste vide : rien à montrer
+        var esc=function(s){return String(s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+        document.querySelector('#ba .before').innerHTML='<img src="'+esc(pr.avant)+'" alt="Avant travaux">';
+        document.querySelector('#ba .after').innerHTML='<img src="'+esc(pr.apres)+'" alt="Après travaux">';
+        var t=[pr.titre,pr.commune].filter(Boolean).join(' \u00b7 ');
+        var hint=sec.querySelector('.ba-hint'); if(hint&&t) hint.textContent=t;
+        garde();
+      })
+      .catch(function(){
+        // lecture impossible (ouverture locale en file://) : on garde l'encadré
+        if(location.protocol==='file:'){ garde(); } else { sec.remove(); }
+      });
+  })();
+
+  function alterneFonds(){
+    // alterne les fonds clair / sable sur les sections réellement visibles,
+    // pour qu'aucune ne se colle à une autre de même teinte
+    var secs = Array.prototype.filter.call(
+      document.querySelectorAll('section.bg-cloud, section.bg-sand'),
+      function(s){ return s.offsetParent !== null || s.style.display !== 'none'; }
+    );
+    secs.forEach(function(s,i){
+      s.classList.remove('bg-cloud','bg-sand');
+      s.classList.add(i % 2 === 0 ? 'bg-cloud' : 'bg-sand');
+    });
+  }
+  alterneFonds();
+  document.addEventListener('baPret', alterneFonds);
+</script>
+</body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Réalisations — N'KO-FINITION, peintre à Dax</title>
+<meta name="description" content="Chantiers de peinture intérieure, façade, décoration et rénovation réalisés par N'KO-FINITION à Dax et dans les Landes.">
+<link rel="canonical" href="https://VOTRE-DOMAINE.fr/realisations.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Crect width=%27100%27 height=%27100%27 rx=%2724%27 fill=%27%23c0603a%27/%3E%3Cpath d=%27M32 72V28h10l16 26V28h10v44H58L42 46v26z%27 fill=%27%23fffdf9%27/%3E%3C/svg%3E">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="N'KO-FINITION">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Réalisations — N'KO-FINITION, peintre à Dax">
+<meta property="og:description" content="Chantiers de peinture intérieure, façade, décoration et rénovation réalisés par N'KO-FINITION à Dax et dans les Landes.">
+<meta property="og:url" content="https://VOTRE-DOMAINE.fr/realisations.html">
+<meta property="og:image" content="https://VOTRE-DOMAINE.fr/photos/og-cover.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#c0603a">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+  .subhero{background:var(--sand);padding:158px 0 72px;text-align:center;border-bottom:1px solid var(--line)}
+  .subhero h1{font-size:clamp(40px,5.5vw,64px);margin:18px 0 16px}
+  .subhero p{font-size:18px;color:var(--ink-soft);max-width:560px;margin:0 auto}
+  .filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:38px}
+  .filt{font-family:var(--corps);font-size:14px;font-weight:600;padding:10px 20px;border-radius:999px;border:1.5px solid var(--line-2);background:var(--white);color:var(--ink-soft);cursor:pointer;transition:.2s}
+  .filt:hover{border-color:var(--clay);color:var(--ink)}
+  .filt.on{background:var(--clay);color:var(--white);border-color:var(--clay)}
+  .gal-sec{background:var(--cloud);padding:80px 0 110px}
+  .gal{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .work{border-radius:var(--r);overflow:hidden;background:var(--white);border:1px solid var(--line);cursor:pointer;transition:.3s var(--ease)}
+  .work:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+  .work .img{aspect-ratio:4/3;overflow:hidden;position:relative}
+  .work .img .ph{width:100%;height:100%;border:0;border-radius:0}
+  .work .badge{position:absolute;top:14px;left:14px;font-family:var(--disp);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:rgba(42,37,33,.75);color:var(--white);padding:5px 11px;border-radius:999px;backdrop-filter:blur(4px);z-index:2}
+  .work .cap{padding:20px 22px}
+  .work .cap h3{font-size:19px;margin-bottom:6px}
+  .work .cap p{font-size:13.5px;color:var(--ink-mut);display:flex;align-items:center;gap:6px}
+  .note{background:var(--sand);border:1px solid var(--line-2);color:var(--ink-soft);border-radius:var(--r);padding:26px 30px;margin-top:48px;display:flex;gap:16px;align-items:flex-start;font-size:14.5px;line-height:1.6}
+  .note svg{width:22px;height:22px;color:var(--clay);flex:none;margin-top:2px}
+  .note b{color:var(--ink)}
+  @media (max-width:920px){.gal{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.gal{grid-template-columns:1fr}}
+
+  .info-item a{color:#f0c4a8;font-weight:600;text-decoration:none;border-bottom:1px solid rgba(240,196,168,.45);transition:.2s}
+  .info-item a:hover{color:#fff;border-bottom-color:#fff}
+  .footer li a{border-bottom:1px solid rgba(255,255,255,.22);transition:.2s}
+  .footer li a:hover{border-bottom-color:#fff}
+
+  /* comparateur avant / après */
+  .ba{position:relative;max-width:960px;margin:0 auto;border-radius:22px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:16/9;user-select:none;border:1px solid var(--line-2)}
+  .ba .layer{position:absolute;inset:0}.ba .layer .ph{width:100%;height:100%;border:0;border-radius:0}
+  .ba .layer img{width:100%;height:100%;object-fit:cover;display:block}
+  .ba .after{clip-path:inset(0 0 0 50%)}
+  .ba .tag{position:absolute;top:18px;font-family:var(--disp);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(42,37,33,.78);color:var(--white);padding:6px 13px;border-radius:999px;backdrop-filter:blur(4px);z-index:2}
+  .ba .tag.l{left:18px}.ba .tag.r{right:18px}
+  .ba .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--white);z-index:3;cursor:ew-resize}
+  .ba .handle .grip{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--white);box-shadow:var(--sh-s);display:flex;align-items:center;justify-content:center;color:var(--clay)}
+  .ba .handle .grip svg{width:20px;height:20px}
+  .ba-hint{text-align:center;font-size:13.5px;color:var(--ink-mut);margin-top:18px}
+
+  .vide{grid-column:1/-1;text-align:center;padding:70px 26px 78px;background:var(--white);
+    border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh-s)}
+  .vide .ic{width:64px;height:64px;border-radius:18px;background:rgba(192,96,58,.10);color:var(--clay);
+    display:flex;align-items:center;justify-content:center;margin:0 auto 22px}
+  .vide .ic svg{width:30px;height:30px}
+  .vide h3{font-size:24px;margin-bottom:12px}
+  .vide p{font-size:15.5px;color:var(--ink-soft);max-width:480px;margin:0 auto 26px;line-height:1.65}
+
+  /* curseur pinceau sur le comparateur uniquement */
+  .ba,.ba *{cursor:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cg transform='rotate(-30 18 18)'%3E%3Crect x='14' y='4' width='8' height='13' rx='2' fill='%23c0603a'/%3E%3Crect x='13' y='16' width='10' height='4' rx='1' fill='%239c4526'/%3E%3Crect x='16' y='20' width='4' height='11' rx='1.6' fill='%232c211b'/%3E%3C/g%3E%3C/svg%3E") 18 4, ew-resize}
+</style>
+</head>
+<body>
+<nav class="nav scrolled" id="nav">
+  <div class="wrap"><div class="nav-inner">
+    <a href="index.html" class="logo" aria-label="N'KO-FINITION, accueil"><span class="plaque"><img src="photos/logo-nkofinition.png" alt="N'KO-FINITION"></span></a>
+    <div class="nav-links" id="navLinks">
+      <a href="index.html">Accueil</a><a href="realisations.html" class="active">Réalisations</a><a href="a-propos.html">À propos</a><a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-primary">Devis gratuit</a>
+    </div>
+    <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div></div>
+</nav>
+<header class="subhero">
+  <div class="wrap">
+    <span class="eyebrow">Nos chantiers</span>
+    <h1>Des finitions dont on est fiers</h1>
+    <p>Chaque photo est un chantier que nous avons mené, du premier coup de pinceau au nettoyage final. Filtrez par type de travaux pour trouver ce qui ressemble au vôtre.</p>
+    <div class="filters" id="filters">
+      <button class="filt on" data-f="all">Tout voir</button><button class="filt" data-f="int">Intérieur</button><button class="filt" data-f="ext">Façade & extérieur</button><button class="filt" data-f="deco">Décoration</button><button class="filt" data-f="reno">Rénovation</button>
+    </div>
+  </div>
+</header>
+<section class="gal-sec">
+  <div class="wrap">
+    <div class="gal" id="gal"></div>
+    <div class="note">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg>
+      <div><b>Pour remplir cette galerie :</b> remplacez chaque cadre par une photo nette au format paysage (4/3), et ajustez le titre, la commune et la catégorie. Une paire avant/après par chantier fait toujours son effet. 8 à 12 réalisations suffisent pour convaincre.</div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-sand" id="baSection" style="display:none">
+  <div class="wrap">
+    <div class="head center reveal"><span class="eyebrow">Transformations</span><h2>Avant / après</h2><p>Faites glisser le curseur pour mesurer la différence sur un même mur.</p></div>
+    <div class="ba reveal d1" id="ba">
+      <div class="layer before"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-4 4 3 4-4 5 5"/></svg><div class="t">Photo « avant »</div></div></div>
+      <div class="layer after" id="baAfter"><div class="ph" style="background:linear-gradient(135deg,#efe8db,#e0d4bd)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-4 4 3 4-4 5 5"/></svg><div class="t">Photo « après »</div></div></div>
+      <span class="tag l">Avant</span><span class="tag r">Après</span>
+      <div class="handle" id="baHandle"><div class="grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg></div></div>
+    </div>
+    <p class="ba-hint">Remplacez les deux cadres par une vraie paire avant/après : <code>photos/avant.jpg</code> et <code>photos/apres.jpg</code>.</p>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div><a href="index.html" class="logo" aria-label="N'KO-FINITION, accueil"><span class="plaque"><img src="photos/logo-nkofinition.png" alt="N'KO-FINITION"></span></a><p class="brandline">Artisan peintre à Dax. Intérieur, extérieur, façade et décoration dans les Landes, le Pays basque et le sud de la Gironde.</p></div>
+      <div><h4>Le site</h4><ul><li><a href="index.html">Accueil</a></li><li><a href="realisations.html">Réalisations</a></li><li><a href="a-propos.html">À propos</a></li><li><a href="contact.html">Contact & devis</a></li></ul></div>
+      <div><h4>Prestations</h4><ul><li>Peinture intérieure</li><li>Façade & ravalement</li><li>Décoration</li><li>Rénovation</li></ul></div>
+      <div><h4>Contact</h4><ul><li><a href="tel:+33605802416">06 05 80 24 16</a></li><li><a href="mailto:nkofinition@gmail.com">nkofinition@gmail.com</a></li><li>44 route de Montfort<br>40100 Dax</li><li><a href="https://www.facebook.com/61561914755370/" target="_blank" rel="noopener">Facebook</a> · <a href="https://www.instagram.com/nkofinition/" target="_blank" rel="noopener">Instagram</a> · <a href="https://www.tiktok.com/@nko.finition" target="_blank" rel="noopener">TikTok</a></li></ul></div>
+    </div>
+    <div class="foot-bottom"><span>© 2026 N'KO-FINITION — E.I. SOUARE Ousmane · SIREN 934 590 761</span><span>Devis & déplacement gratuits · Dax et 100 km alentour</span></div>
+  </div>
+</footer>
+<script>
+  const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
+  burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+  const LABELS={int:'Intérieur',ext:'Façade & extérieur',deco:'Décoration',reno:'Rénovation'};
+  const gal=document.getElementById('gal');
+  let works=[];
+  let filtre='all';
+
+  const cadre=tag=>`<div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><div class="t">Photo — ${tag}</div></div>`;
+  const esc=s=>String(s||'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  const render=()=>{
+    const list=works.filter(w=>filtre==='all'||w.categorie===filtre);
+    if(!list.length){
+      const tout = filtre==='all';
+      gal.innerHTML='<div class="vide">'
+        +'<div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>'
+        +'<h3>'+(tout?'Les premières photos arrivent':'Aucun chantier dans cette catégorie')+'</h3>'
+        +'<p>'+(tout
+          ?"Nos chantiers en cours seront publiés ici très prochainement. En attendant, parlez-nous du vôtre : nous nous déplaçons gratuitement pour l'évaluer."
+          :'Choisissez « Tout voir » pour afficher l\'ensemble des réalisations.')+'</p>'
+        +(tout?'<a href="contact.html" class="btn btn-primary">Demander un devis gratuit<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>':'')
+        +'</div>';
+      return;
+    }
+    gal.innerHTML=list.map(w=>{
+      const tag=LABELS[w.categorie]||'Chantier';
+      const media=w.photo
+        ? `<img src="${esc(w.photo)}" alt="${esc(w.titre)} — ${esc(w.commune)}" loading="lazy" style="width:100%;height:100%;object-fit:cover">`
+        : cadre(tag);
+      return `<div class="work"><div class="img"><span class="badge">${esc(tag)}</span>${media}</div>
+      <div class="cap"><h3>${esc(w.titre)}</h3><p><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#978d7e" stroke-width="2"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>${esc(w.commune)}</p></div></div>`;
+    }).join('');
+  };
+
+  fetch('content/realisations.json',{cache:'no-store'})
+    .then(r=>r.ok?r.json():{chantiers:[]})
+    .then(d=>{works=Array.isArray(d.chantiers)?d.chantiers:[];render();})
+    .catch(()=>{
+      if(location.protocol==='file:'){
+        gal.innerHTML='<div class="vide"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4M12 8h.01"/></svg></div><h3>Aperçu local limité</h3><p>Vous avez ouvert le fichier directement depuis votre ordinateur. Dans ce mode, le navigateur bloque la lecture des photos et des chantiers. Tout s\'affichera normalement une fois le site en ligne.</p></div>';
+      } else { works=[]; render(); }
+    });
+
+  document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('.filt');if(!b)return;document.querySelectorAll('.filt').forEach(x=>x.classList.toggle('on',x===b));filtre=b.dataset.f;render();});
+</script>
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<script>if(window.netlifyIdentity){window.netlifyIdentity.on("init",u=>{if(!u){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});}});}
+  (function(){
+    const ba=document.getElementById('ba');if(!ba)return;
+    const after=document.getElementById('baAfter'),handle=document.getElementById('baHandle');
+    let drag=false;
+    const set=x=>{const r=ba.getBoundingClientRect();let p=Math.max(0,Math.min(1,(x-r.left)/r.width));after.style.clipPath='inset(0 0 0 '+p*100+'%)';handle.style.left=p*100+'%';};
+    handle.addEventListener('mousedown',()=>drag=true);window.addEventListener('mouseup',()=>drag=false);
+    window.addEventListener('mousemove',e=>{if(drag)set(e.clientX)});
+    handle.addEventListener('touchstart',()=>drag=true,{passive:true});window.addEventListener('touchend',()=>drag=false);
+    window.addEventListener('touchmove',e=>{if(drag)set(e.touches[0].clientX)},{passive:true});
+    ba.addEventListener('click',e=>{if(!e.target.closest('.handle'))set(e.clientX)});
+  })();
+
+  (function(){
+    var sec=document.getElementById('baSection'); if(!sec) return;
+    function garde(){ sec.style.display=''; document.dispatchEvent(new Event('baPret')); }
+    fetch('content/avant-apres.json',{cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(d){
+        var l=Array.isArray(d.paires)?d.paires:[];
+        var pr=l.find(function(x){return x && x.avant && x.apres});
+        if(!pr){ sec.remove(); return; }           // liste vide : rien à montrer
+        var esc=function(s){return String(s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
+        document.querySelector('#ba .before').innerHTML='<img src="'+esc(pr.avant)+'" alt="Avant travaux">';
+        document.querySelector('#ba .after').innerHTML='<img src="'+esc(pr.apres)+'" alt="Après travaux">';
+        var t=[pr.titre,pr.commune].filter(Boolean).join(' \u00b7 ');
+        var hint=sec.querySelector('.ba-hint'); if(hint&&t) hint.textContent=t;
+        garde();
+      })
+      .catch(function(){
+        // lecture impossible (ouverture locale en file://) : on garde l'encadré
+        if(location.protocol==='file:'){ garde(); } else { sec.remove(); }
+      });
+  })();
+
+  function alterneFonds(){
+    // alterne les fonds clair / sable sur les sections réellement visibles,
+    // pour qu'aucune ne se colle à une autre de même teinte
+    var secs = Array.prototype.filter.call(
+      document.querySelectorAll('section.bg-cloud, section.bg-sand'),
+      function(s){ return s.offsetParent !== null || s.style.display !== 'none'; }
+    );
+    secs.forEach(function(s,i){
+      s.classList.remove('bg-cloud','bg-sand');
+      s.classList.add(i % 2 === 0 ? 'bg-cloud' : 'bg-sand');
+    });
+  }
+  alterneFonds();
+  document.addEventListener('baPret', alterneFonds);
+</script>
+</body>
+</html>
