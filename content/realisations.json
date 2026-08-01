@@ -35,6 +35,12 @@
       "titre": "Facade",
       "commune": "Tarnos",
       "categorie": "ext"
+    },
+    {
+      "photo": "/photos/realisations/images-7-.jpg",
+      "titre": "Interieur",
+      "commune": "Biarritz",
+      "categorie": "int"
     }
   ]
 }
