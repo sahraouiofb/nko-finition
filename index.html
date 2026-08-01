@@ -199,6 +199,17 @@
   .trust b{font-family:var(--disp);font-size:16px;color:var(--ink)}
   .trust .sep{width:1px;height:16px;background:var(--line-2)}
   @media(max-width:520px){.trust .sep{display:none}}
+
+  @media(max-width:560px){
+    .cta-box{padding:40px 22px;border-radius:20px}
+    .cta-box h2{font-size:28px;margin-bottom:12px}
+    .cta-box p{font-size:16px;margin-bottom:24px}
+    .cta-box .btn{width:100%;justify-content:center}
+    .temoin{padding:24px 20px}
+    .avis{padding:22px 20px}
+    .card,.val{padding:22px 20px}
+    .head{margin-bottom:32px}
+  }
 </style>
 </head>
 <body>
@@ -448,8 +459,19 @@
   const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>40);
   onScroll();window.addEventListener('scroll',onScroll);
   const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
-  burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+  const veil=document.createElement('div'); veil.className='nav-veil'; document.body.appendChild(veil);
+  const setMenu=o=>{
+    navLinks.classList.toggle('open',o);
+    burger.classList.toggle('open',o);
+    veil.classList.toggle('on',o);
+    burger.setAttribute('aria-expanded',o?'true':'false');
+    document.body.style.overflow=o?'hidden':'';
+  };
+  burger.setAttribute('aria-expanded','false');
+  burger.addEventListener('click',()=>setMenu(!navLinks.classList.contains('open')));
+  veil.addEventListener('click',()=>setMenu(false));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
 
   const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}}),{threshold:.12});
   document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));

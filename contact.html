@@ -87,6 +87,11 @@
     color:#e8e0d3!important;font-size:13.5px;font-weight:600;border-bottom-width:1px!important;transition:.22s}
   .socials a svg{width:17px;height:17px;flex:none}
   .socials a:hover{background:var(--clay);border-color:var(--clay);color:#fff!important;transform:translateY(-2px)}
+
+  @media(max-width:560px){
+    .chips{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+    .chip span{display:block;width:100%;text-align:center;font-size:13px;padding:11px 6px;line-height:1.25}
+  }
 </style>
 </head>
 <body>
@@ -179,8 +184,19 @@
 </footer>
 <script>
   const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
-  burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+  const veil=document.createElement('div'); veil.className='nav-veil'; document.body.appendChild(veil);
+  const setMenu=o=>{
+    navLinks.classList.toggle('open',o);
+    burger.classList.toggle('open',o);
+    veil.classList.toggle('on',o);
+    burger.setAttribute('aria-expanded',o?'true':'false');
+    document.body.style.overflow=o?'hidden':'';
+  };
+  burger.setAttribute('aria-expanded','false');
+  burger.addEventListener('click',()=>setMenu(!navLinks.classList.contains('open')));
+  veil.addEventListener('click',()=>setMenu(false));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
   const form=document.getElementById('devisForm');
 
   // construit une fiche lisible en français, envoyée dans un seul champ

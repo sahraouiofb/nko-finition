@@ -106,8 +106,19 @@
 </footer>
 <script>
   const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
-  burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+  const veil=document.createElement('div'); veil.className='nav-veil'; document.body.appendChild(veil);
+  const setMenu=o=>{
+    navLinks.classList.toggle('open',o);
+    burger.classList.toggle('open',o);
+    veil.classList.toggle('on',o);
+    burger.setAttribute('aria-expanded',o?'true':'false');
+    document.body.style.overflow=o?'hidden':'';
+  };
+  burger.setAttribute('aria-expanded','false');
+  burger.addEventListener('click',()=>setMenu(!navLinks.classList.contains('open')));
+  veil.addEventListener('click',()=>setMenu(false));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
   const LABELS={int:'Intérieur',ext:'Façade & extérieur',deco:'Décoration',reno:'Rénovation'};
   const gal=document.getElementById('gal');
   let works=[];
