@@ -60,7 +60,11 @@
   .vide h3{font-size:24px;margin-bottom:12px}
   .vide p{font-size:15.5px;color:var(--ink-soft);max-width:480px;margin:0 auto 26px;line-height:1.65}
 
-  @media(max-width:760px){.filt{min-height:44px;padding:11px 16px}}
+  @media(max-width:760px){
+    .filters{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:28px}
+    .filt{min-height:46px;padding:12px 8px;font-size:13.5px;width:100%;line-height:1.2}
+    .filt:first-child{grid-column:1/-1}
+  }
 </style>
 </head>
 <body>
