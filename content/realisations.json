@@ -65,6 +65,12 @@
       "titre": "Salon",
       "commune": "Mees",
       "categorie": "int"
+    },
+    {
+      "photo": "/photos/realisations/images-16-.jpg",
+      "titre": "Rénov",
+      "commune": "Bordeaux",
+      "categorie": "reno"
     }
   ]
 }
