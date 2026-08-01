@@ -1,3 +1,10 @@
 {
-  "paires": []
+  "paires": [
+    {
+      "avant": "/photos/realisations/piece-de-vie-avant-maine-et-loire-min.jpg",
+      "apres": "/photos/realisations/piece-de-vie-apres-maine-et-loire-min.jpg",
+      "commune": "mees",
+      "titre": "Avant/Après"
+    }
+  ]
 }
