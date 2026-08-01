@@ -51,17 +51,6 @@
   .footer li a{border-bottom:1px solid rgba(255,255,255,.22);transition:.2s}
   .footer li a:hover{border-bottom-color:#fff}
 
-  /* comparateur avant / après */
-  .ba{position:relative;max-width:960px;margin:0 auto;border-radius:22px;overflow:hidden;box-shadow:var(--sh);aspect-ratio:16/9;user-select:none;border:1px solid var(--line-2)}
-  .ba .layer{position:absolute;inset:0}.ba .layer .ph{width:100%;height:100%;border:0;border-radius:0}
-  .ba .layer img{width:100%;height:100%;object-fit:cover;display:block}
-  .ba .after{clip-path:inset(0 0 0 50%)}
-  .ba .tag{position:absolute;top:18px;font-family:var(--disp);font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:rgba(42,37,33,.78);color:var(--white);padding:6px 13px;border-radius:999px;backdrop-filter:blur(4px);z-index:2}
-  .ba .tag.l{left:18px}.ba .tag.r{right:18px}
-  .ba .handle{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--white);z-index:3;cursor:ew-resize}
-  .ba .handle .grip{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--white);box-shadow:var(--sh-s);display:flex;align-items:center;justify-content:center;color:var(--clay)}
-  .ba .handle .grip svg{width:20px;height:20px}
-  .ba-hint{text-align:center;font-size:13.5px;color:var(--ink-mut);margin-top:18px}
 
   .vide{grid-column:1/-1;text-align:center;padding:70px 26px 78px;background:var(--white);
     border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--sh-s)}
@@ -71,8 +60,6 @@
   .vide h3{font-size:24px;margin-bottom:12px}
   .vide p{font-size:15.5px;color:var(--ink-soft);max-width:480px;margin:0 auto 26px;line-height:1.65}
 
-  /* curseur pinceau sur le comparateur uniquement */
-  .ba,.ba *{cursor:url("data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Cg transform='rotate(-30 18 18)'%3E%3Crect x='14' y='4' width='8' height='13' rx='2' fill='%23c0603a'/%3E%3Crect x='13' y='16' width='10' height='4' rx='1' fill='%239c4526'/%3E%3Crect x='16' y='20' width='4' height='11' rx='1.6' fill='%232c211b'/%3E%3C/g%3E%3C/svg%3E") 18 4, ew-resize}
 </style>
 </head>
 <body>
@@ -103,18 +90,7 @@
   </div>
 </section>
 
-<section class="bg-sand" id="baSection" style="display:none">
-  <div class="wrap">
-    <div class="head center reveal"><span class="eyebrow">Transformations</span><h2>Avant / après</h2><p>Faites glisser le curseur pour mesurer la différence sur un même mur.</p></div>
-    <div class="ba reveal d1" id="ba">
-      <div class="layer before"><div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-4 4 3 4-4 5 5"/></svg><div class="t">Photo « avant »</div></div></div>
-      <div class="layer after" id="baAfter"><div class="ph" style="background:linear-gradient(135deg,#efe8db,#e0d4bd)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 15l5-4 4 3 4-4 5 5"/></svg><div class="t">Photo « après »</div></div></div>
-      <span class="tag l">Avant</span><span class="tag r">Après</span>
-      <div class="handle" id="baHandle"><div class="grip"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4"/></svg></div></div>
-    </div>
-    <p class="ba-hint">Faites glisser le curseur.</p>
-  </div>
-</section>
+
 
 <footer class="footer">
   <div class="wrap">
@@ -173,39 +149,9 @@
     });
 
   document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('.filt');if(!b)return;document.querySelectorAll('.filt').forEach(x=>x.classList.toggle('on',x===b));filtre=b.dataset.f;render();});
-  (function(){
-    const ba=document.getElementById('ba');if(!ba)return;
-    const after=document.getElementById('baAfter'),handle=document.getElementById('baHandle');
-    let drag=false;
-    const set=x=>{const r=ba.getBoundingClientRect();let p=Math.max(0,Math.min(1,(x-r.left)/r.width));after.style.clipPath='inset(0 0 0 '+p*100+'%)';handle.style.left=p*100+'%';};
-    handle.addEventListener('mousedown',()=>drag=true);window.addEventListener('mouseup',()=>drag=false);
-    window.addEventListener('mousemove',e=>{if(drag)set(e.clientX)});
-    handle.addEventListener('touchstart',()=>drag=true,{passive:true});window.addEventListener('touchend',()=>drag=false);
-    window.addEventListener('touchmove',e=>{if(drag)set(e.touches[0].clientX)},{passive:true});
-    ba.addEventListener('click',e=>{if(!e.target.closest('.handle'))set(e.clientX)});
-  })();
 
-  (function(){
-    var sec=document.getElementById('baSection'); if(!sec) return;
-    function garde(){ sec.style.display=''; document.dispatchEvent(new Event('baPret')); }
-    fetch('content/avant-apres.json',{cache:'no-store'})
-      .then(function(r){ if(!r.ok) throw 0; return r.json(); })
-      .then(function(d){
-        var l=Array.isArray(d.paires)?d.paires:[];
-        var pr=l.find(function(x){return x && x.avant && x.apres});
-        if(!pr){ sec.remove(); return; }           // liste vide : rien à montrer
-        var esc=function(s){return String(s||'').replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]})};
-        document.querySelector('#ba .before').innerHTML='<img src="'+esc(pr.avant)+'" alt="Avant travaux">';
-        document.querySelector('#ba .after').innerHTML='<img src="'+esc(pr.apres)+'" alt="Après travaux">';
-        var t=[pr.titre,pr.commune].filter(Boolean).join(' \u00b7 ');
-        var hint=sec.querySelector('.ba-hint'); if(hint&&t) hint.textContent=t;
-        garde();
-      })
-      .catch(function(){
-        // lecture impossible (ouverture locale en file://) : on garde l'encadré
-        if(location.protocol==='file:'){ garde(); } else { sec.remove(); }
-      });
-  })();
+
+
 
   function alterneFonds(){
     // alterne les fonds clair / sable sur les sections réellement visibles,

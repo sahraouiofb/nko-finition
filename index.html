@@ -75,7 +75,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="style.css">
 <style>
   /* ---------- HERO éditorial clair ---------- */
@@ -148,14 +147,6 @@
   .ba .handle .grip svg{width:20px;height:20px}
   .ba-hint{text-align:center;color:var(--ink-mut);font-size:13px;margin-top:18px}
 
-  /* ---------- carte / zone ---------- */
-  .zone-grid{display:grid;grid-template-columns:1fr 1.15fr;gap:52px;align-items:center}
-  .zone h2{font-size:clamp(28px,3.6vw,44px);margin:18px 0 18px}
-  .zone p{font-size:17px;color:var(--ink-soft);margin-bottom:24px}
-  .zone-tags{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
-  .zone-tags span{font-size:14px;padding:8px 15px;border-radius:999px;background:var(--white);border:1px solid var(--line);color:var(--ink-soft)}
-  #map{height:460px;border-radius:22px;box-shadow:var(--sh);border:1px solid var(--line-2);z-index:1}
-  .leaflet-container{font-family:var(--corps)}
 
   /* ---------- avis ---------- */
   .avis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
@@ -174,7 +165,7 @@
   .cta-box p{color:rgba(255,253,249,.9);font-size:18px;margin-bottom:32px;position:relative;max-width:520px;margin-left:auto;margin-right:auto}
 
   @media (max-width:920px){
-    .hero-grid,.intro-grid,.zone-grid{grid-template-columns:1fr;gap:40px}
+    .hero-grid,.intro-grid{grid-template-columns:1fr;gap:40px}
     .hero-visual{order:-1}
     .hero-stats{grid-template-columns:1fr 1fr}
     .prest-grid,.avis-grid{grid-template-columns:1fr}
@@ -347,23 +338,7 @@
 </section>
 
 <!-- ZONE + CARTE -->
-<section class="bg-cloud">
-  <div class="wrap">
-    <div class="zone-grid">
-      <div class="reveal">
-        <span class="eyebrow">Zone d'intervention</span>
-        <h2>Dax et 100 km à la ronde</h2>
-        <p>Installés à Dax, nous intervenons dans les Landes, sur la côte, vers le Pays basque et le sud de la Gironde. Une maison à Saint-Paul-lès-Dax, un appartement à Bayonne, une façade à Mont-de-Marsan : le déplacement et le devis restent gratuits.</p>
-        <div class="zone-tags">
-          <span>Dax</span><span>Saint-Paul-lès-Dax</span><span>Narrosse</span><span>Saint-Vincent-de-Paul</span><span>Tercis-les-Bains</span><span>Soustons</span><span>Tartas</span><span>Pontonx</span><span>Mées</span>
-        </div>
-        <a href="contact.html" class="btn btn-primary">Vérifier ma commune
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
-      </div>
-      <div class="reveal d1"><div id="map"></div></div>
-    </div>
-  </div>
-</section>
+
 
 <!-- ENGAGEMENTS -->
 <section class="bg-sand">
@@ -468,8 +443,6 @@
     </div>
   </div>
 </footer>
-
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
   const nav=document.getElementById('nav');
   const onScroll=()=>nav.classList.toggle('scrolled',window.scrollY>40);
@@ -494,18 +467,7 @@
 
 
 
-  (function(){
-    if(typeof L === 'undefined'){ var m=document.getElementById('map'); if(m) m.style.display='none'; return; }
-    try{
-    const dax=[43.7102,-1.0530];
-    const map=L.map('map',{scrollWheelZoom:false}).setView(dax,8);
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap © CARTO',maxZoom:19}).addTo(map);
-    L.circle(dax,{radius:100000,color:'#9c4526',weight:1.5,fillColor:'#c0603a',fillOpacity:.12}).addTo(map);
-    const icon=L.divIcon({className:'',html:'<div style="width:20px;height:20px;background:#c0603a;border:3px solid #fff;border-radius:50%;box-shadow:0 2px 8px rgba(0,0,0,.3)"></div>',iconSize:[20,20],iconAnchor:[10,10]});
-    L.marker(dax,{icon}).addTo(map).bindPopup("<b>N'KO-FINITION</b><br>Dax (40100)");
-    map.fitBounds(L.circle(dax,{radius:100000}).getBounds(),{padding:[20,20]});
-    }catch(e){ var m=document.getElementById('map'); if(m) m.style.display='none'; }
-  })();
+
   (function(){
     var sec=document.getElementById('baSection'); if(!sec) return;
     function garde(){ sec.style.display=''; document.dispatchEvent(new Event('baPret')); }
