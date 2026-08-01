@@ -41,6 +41,12 @@
       "titre": "Interieur",
       "commune": "Biarritz",
       "categorie": "int"
+    },
+    {
+      "photo": "/photos/realisations/images-6-.jpg",
+      "titre": "Cuisine",
+      "commune": "Soustons",
+      "categorie": "int"
     }
   ]
 }
