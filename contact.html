@@ -101,35 +101,39 @@
     <div class="form-card">
       <div class="success" id="success">✓ Merci ! Votre demande a bien été envoyée. Nous vous recontactons très vite.</div>
       <form id="devisForm" action="https://formspree.io/f/xjgnqyyz" method="POST">
+
+        <input type="hidden" name="_subject" value="Nouvelle demande de devis — {{ nom }} ({{ commune }})">
+        <input type="hidden" name="_replyto" value="{{ email }}">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0;width:0" aria-hidden="true">
         <div class="fstep"><span class="b">1</span> Votre projet</div>
         <div class="fld full" style="margin-bottom:16px">
           <label>Type de travaux <span class="r">*</span></label>
           <div class="chips">
-            <label class="chip"><input type="checkbox" name="Travaux" value="Peinture intérieure"><span>Peinture intérieure</span></label>
-            <label class="chip"><input type="checkbox" name="Travaux" value="Façade / extérieur"><span>Façade / extérieur</span></label>
-            <label class="chip"><input type="checkbox" name="Travaux" value="Décoration"><span>Décoration</span></label>
-            <label class="chip"><input type="checkbox" name="Travaux" value="Revêtement de sol"><span>Revêtement de sol</span></label>
-            <label class="chip"><input type="checkbox" name="Travaux" value="Rénovation complète"><span>Rénovation complète</span></label>
-            <label class="chip"><input type="checkbox" name="Travaux" value="Autre"><span>Autre</span></label>
+            <label class="chip"><input type="checkbox" name="travaux" value="Peinture intérieure"><span>Peinture intérieure</span></label>
+            <label class="chip"><input type="checkbox" name="travaux" value="Façade / extérieur"><span>Façade / extérieur</span></label>
+            <label class="chip"><input type="checkbox" name="travaux" value="Décoration"><span>Décoration</span></label>
+            <label class="chip"><input type="checkbox" name="travaux" value="Revêtement de sol"><span>Revêtement de sol</span></label>
+            <label class="chip"><input type="checkbox" name="travaux" value="Rénovation complète"><span>Rénovation complète</span></label>
+            <label class="chip"><input type="checkbox" name="travaux" value="Autre"><span>Autre</span></label>
           </div>
         </div>
         <div class="frow">
-          <div class="fld"><label>Type de bien</label><select name="Type de bien"><option value="">— Sélectionner —</option><option>Maison</option><option>Appartement</option><option>Local professionnel</option><option>Autre</option></select></div>
-          <div class="fld"><label>Surface approximative</label><select name="Surface"><option value="">— Sélectionner —</option><option>Moins de 20 m²</option><option>20 à 50 m²</option><option>50 à 100 m²</option><option>Plus de 100 m²</option><option>Je ne sais pas</option></select></div>
+          <div class="fld"><label>Type de bien</label><select name="type_de_bien"><option value="">— Sélectionner —</option><option>Maison</option><option>Appartement</option><option>Local professionnel</option><option>Autre</option></select></div>
+          <div class="fld"><label>Surface approximative</label><select name="surface"><option value="">— Sélectionner —</option><option>Moins de 20 m²</option><option>20 à 50 m²</option><option>50 à 100 m²</option><option>Plus de 100 m²</option><option>Je ne sais pas</option></select></div>
         </div>
         <div class="frow">
-          <div class="fld"><label>Intérieur / extérieur</label><div class="chips"><label class="chip"><input type="radio" name="Emplacement" value="Intérieur"><span>Intérieur</span></label><label class="chip"><input type="radio" name="Emplacement" value="Extérieur"><span>Extérieur</span></label><label class="chip"><input type="radio" name="Emplacement" value="Les deux"><span>Les deux</span></label></div></div>
-          <div class="fld"><label>Délai souhaité</label><select name="Délai"><option value="">— Sélectionner —</option><option>Dès que possible</option><option>Dans le mois</option><option>Dans les 3 mois</option><option>À planifier</option></select></div>
+          <div class="fld"><label>Intérieur / extérieur</label><div class="chips"><label class="chip"><input type="radio" name="emplacement" value="Intérieur"><span>Intérieur</span></label><label class="chip"><input type="radio" name="emplacement" value="Extérieur"><span>Extérieur</span></label><label class="chip"><input type="radio" name="emplacement" value="Les deux"><span>Les deux</span></label></div></div>
+          <div class="fld"><label>Délai souhaité</label><select name="delai"><option value="">— Sélectionner —</option><option>Dès que possible</option><option>Dans le mois</option><option>Dans les 3 mois</option><option>À planifier</option></select></div>
         </div>
-        <div class="fld full"><label>Décrivez votre projet</label><textarea name="Description" placeholder="Ex. : repeindre le salon et le couloir, murs actuellement beiges, quelques fissures à reboucher…"></textarea></div>
+        <div class="fld full"><label>Décrivez votre projet</label><textarea name="description" placeholder="Ex. : repeindre le salon et le couloir, murs actuellement beiges, quelques fissures à reboucher…"></textarea></div>
         <div class="fstep"><span class="b">2</span> Vos coordonnées</div>
         <div class="frow">
-          <div class="fld"><label>Nom & prénom <span class="r">*</span></label><input type="text" name="Nom" required></div>
-          <div class="fld"><label>Téléphone <span class="r">*</span></label><input type="tel" name="Téléphone" required></div>
+          <div class="fld"><label>Nom & prénom <span class="r">*</span></label><input type="text" name="nom" required></div>
+          <div class="fld"><label>Téléphone <span class="r">*</span></label><input type="tel" name="telephone" required></div>
         </div>
         <div class="frow">
-          <div class="fld"><label>Email <span class="r">*</span></label><input type="email" name="Email" required></div>
-          <div class="fld"><label>Commune du chantier</label><input type="text" name="Commune" placeholder="Ex. : Dax"></div>
+          <div class="fld"><label>Email <span class="r">*</span></label><input type="email" name="email" required></div>
+          <div class="fld"><label>Commune du chantier</label><input type="text" name="commune" placeholder="Ex. : Dax"></div>
         </div>
         <button type="submit" class="btn btn-primary submit">Envoyer ma demande de devis <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
         <p class="fnote">Champs marqués <span style="color:var(--clay)">*</span> obligatoires · Vos données ne servent qu'à vous recontacter.</p>
@@ -170,7 +174,6 @@
   navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
   const form=document.getElementById('devisForm');
   form.addEventListener('submit',async e=>{
-
     e.preventDefault();
     try{const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
       if(r.ok){document.getElementById('success').classList.add('on');form.reset();window.scrollTo({top:0,behavior:'smooth'});}
