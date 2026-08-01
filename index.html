@@ -256,7 +256,7 @@
       <div class="hero-visual reveal in d2">
         <div class="hero-frame">
           <!-- Remplacez ce bloc .ph par : <img src="photos/hero.jpg" alt="Chantier N'KO-FINITION"> -->
-          <div class="ph">
+          <div class="ph" id="heroPhoto">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 21h18M5 21V8l7-4 7 4v13"/><path d="M9 21v-6h6v6"/></svg>
             <div class="t">Photo chantier — format portrait</div>
             <div class="d">Un bel intérieur fini ou une façade rénovée. Format vertical.</div>
@@ -292,7 +292,7 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="intro-media reveal d1">
-        <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg><div class="t">Photo d'ambiance — peintre au travail</div></div>
+        <div class="ph" id="ambiancePhoto"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg><div class="t">Photo d'ambiance — peintre au travail</div></div>
       </div>
     </div>
   </div>
@@ -314,12 +314,15 @@
 </section>
 
 <!-- VIDÉO -->
-<section class="bg-cloud" id="videoSection" style="display:none">
+<section class="bg-cloud" id="videoSection">
   <div class="wrap">
     <div class="head center reveal"><span class="eyebrow">Rencontre</span><h2>Le mot du fondateur</h2><p>Deux minutes pour savoir à qui vous confiez vos murs, et comment nous travaillons.</p></div>
     <div class="video-wrap reveal d1" id="videoWrap">
-      <div class="ph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="M10 9l5 3-5 3z"/></svg><div class="t">Emplacement vidéo — le patron qui parle</div><div class="d">Une prise de parole face caméra (1 à 2 min). Format 16/9.</div></div>
-      <div class="video-play" id="videoPlay"><div class="pbtn"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div><div class="pl">Lire la vidéo</div></div>
+      <video id="bossVideo" controls playsinline preload="metadata" poster="photos/patron-poster.jpg"
+             style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit">
+        <source src="photos/patron.mp4" type="video/mp4">
+        Votre navigateur ne peut pas lire cette vidéo.
+      </video>
     </div>
     <div class="video-cap reveal d2">
       <div class="av"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21v-1a6 6 0 016-6h4a6 6 0 016 6v1"/></svg></div>
@@ -488,49 +491,7 @@
     ba.addEventListener('click',e=>{if(!e.target.closest('.handle'))set(e.clientX)});
   })();
 
-  (function(){
-    var sec=document.getElementById('videoSection'); if(!sec) return;
-    var wrap=document.getElementById('videoWrap');
-    var noms=['photos/patron.mp4','photos/fondateur.mp4','photos/video.mp4','photos/presentation.mp4'];
 
-    // 1) test par le lecteur vidéo : fonctionne aussi en ouverture locale (file://)
-    function testeVideo(url){
-      return new Promise(function(res){
-        var v=document.createElement('video'), fini=false;
-        var t=setTimeout(function(){ if(!fini){fini=true;res(false);} },5000);
-        v.onloadedmetadata=function(){ if(!fini){fini=true;clearTimeout(t);res(true);} };
-        v.onerror       =function(){ if(!fini){fini=true;clearTimeout(t);res(false);} };
-        v.preload='metadata'; v.src=url;
-      });
-    }
-    function testePoster(){
-      return new Promise(function(res){
-        var i=new Image();
-        i.onload=function(){res('photos/patron-poster.jpg')};
-        i.onerror=function(){res('')};
-        i.src='photos/patron-poster.jpg';
-      });
-    }
-
-    Promise.all(noms.map(testeVideo)).then(function(r){
-      var url=noms[r.indexOf(true)];
-      if(!url){
-        // rien de lisible : on masque UNIQUEMENT si on est bien sur un serveur.
-        // en ouverture locale (file://) on garde l'encadré visible.
-        if(location.protocol==='file:'){ sec.style.display=''; return; }
-        sec.remove(); return;
-      }
-      testePoster().then(function(poster){
-        wrap.innerHTML='<video id="bossVideo" controls playsinline preload="metadata"'
-          +(poster?' poster="'+poster+'"':'')
-          +' style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit">'
-          +'<source src="'+url+'" type="video/mp4">'
-          +'Votre navigateur ne peut pas lire cette vidéo.</video>';
-        sec.style.display='';
-        document.dispatchEvent(new Event('baPret'));
-      });
-    });
-  })();
 
   (function(){
     const dax=[43.7102,-1.0530];
@@ -580,6 +541,24 @@
   }
   alterneFonds();
   document.addEventListener('baPret', alterneFonds);
+
+  (function(){
+    // photos fixes du site, pilotées depuis /admin -> "③ Photos du site"
+    fetch('content/identite.json',{cache:'no-store'})
+      .then(function(r){ if(!r.ok) throw 0; return r.json(); })
+      .then(function(d){
+        function pose(sel, url, alt){
+          if(!url) return;
+          var c=document.querySelector(sel); if(!c) return;
+          c.innerHTML='<img src="'+url+'" alt="'+alt+'" loading="lazy" '
+            +'style="width:100%;height:100%;object-fit:cover;display:block;border-radius:inherit">';
+        }
+        pose('#heroPhoto',     d.hero,     "Chantier réalisé par N'KO-FINITION");
+        pose('#ambiancePhoto', d.ambiance, "Artisan peintre au travail");
+        pose('#portraitPhoto', d.portrait, "Ousmane Souaré, fondateur de N'KO-FINITION");
+      })
+      .catch(function(){});
+  })();
 </script>
 </body>
 </html>
