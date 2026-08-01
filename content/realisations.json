@@ -1,3 +1,10 @@
 {
-  "chantiers": []
+  "chantiers": [
+    {
+      "photo": "/photos/realisations/images-5-.jpg",
+      "titre": "Salon",
+      "commune": "Dax",
+      "categorie": "int"
+    }
+  ]
 }
