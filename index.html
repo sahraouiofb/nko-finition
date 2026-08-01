@@ -502,9 +502,6 @@
     L.marker(dax,{icon}).addTo(map).bindPopup("<b>N'KO-FINITION</b><br>Dax (40100)");
     map.fitBounds(L.circle(dax,{radius:100000}).getBounds(),{padding:[20,20]});
   })();
-</script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>if(window.netlifyIdentity){window.netlifyIdentity.on("init",u=>{if(!u){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});}});}
   (function(){
     var sec=document.getElementById('baSection'); if(!sec) return;
     function garde(){ sec.style.display=''; document.dispatchEvent(new Event('baPret')); }

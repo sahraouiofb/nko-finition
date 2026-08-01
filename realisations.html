@@ -176,9 +176,6 @@
     });
 
   document.getElementById('filters').addEventListener('click',e=>{const b=e.target.closest('.filt');if(!b)return;document.querySelectorAll('.filt').forEach(x=>x.classList.toggle('on',x===b));filtre=b.dataset.f;render();});
-</script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>if(window.netlifyIdentity){window.netlifyIdentity.on("init",u=>{if(!u){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});}});}
   (function(){
     const ba=document.getElementById('ba');if(!ba)return;
     const after=document.getElementById('baAfter'),handle=document.getElementById('baHandle');

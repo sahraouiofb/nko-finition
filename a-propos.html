@@ -143,9 +143,6 @@
   const burger=document.getElementById('burger'),navLinks=document.getElementById('navLinks');
   burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
-</script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>if(window.netlifyIdentity){window.netlifyIdentity.on("init",u=>{if(!u){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});}});}
   (function(){
     // alterne les fonds clair / sable sur les sections réellement visibles,
     // pour qu'aucune ne se colle à une autre de même teinte

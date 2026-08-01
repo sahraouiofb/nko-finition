@@ -102,7 +102,6 @@
       <div class="success" id="success">✓ Merci ! Votre demande a bien été envoyée. Nous vous recontactons très vite.</div>
       <form id="devisForm" action="https://formspree.io/f/xjgnqyyz" method="POST">
 
-        <input type="hidden" name="_subject" value="Nouvelle demande de devis — {{ nom }} ({{ commune }})">
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px;opacity:0;height:0;width:0" aria-hidden="true">
         <div class="fstep"><span class="b">1</span> Votre projet</div>
         <div class="fld full" style="margin-bottom:16px">
@@ -172,15 +171,68 @@
   burger.addEventListener('click',()=>navLinks.classList.toggle('open'));
   navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
   const form=document.getElementById('devisForm');
+
+  // construit une fiche lisible en français, envoyée dans un seul champ
+  function ficheDevis(fd){
+    const g = k => (fd.getAll(k).filter(Boolean).join(', ') || '');
+    const L = [];
+    const bloc = (titre, lignes) => {
+      const utiles = lignes.filter(l => l[1]);
+      if(!utiles.length) return;
+      L.push(titre);
+      utiles.forEach(([lab,val]) => L.push('  ' + lab + ' : ' + val));
+      L.push('');
+    };
+    const d = new Date();
+    const p2 = n => String(n).padStart(2,'0');
+
+    L.push('DEMANDE DE DEVIS');
+    L.push('Reçue le ' + p2(d.getDate()) + '/' + p2(d.getMonth()+1) + '/' + d.getFullYear()
+           + ' à ' + p2(d.getHours()) + 'h' + p2(d.getMinutes()));
+    L.push('------------------------------------');
+    L.push('');
+
+    bloc('LE CLIENT', [
+      ['Nom', g('nom')],
+      ['Téléphone', g('telephone')],
+      ['Email', g('email')],
+      ['Commune du chantier', g('commune')],
+    ]);
+    bloc('LE CHANTIER', [
+      ['Type de travaux', g('travaux')],
+      ['Intérieur / extérieur', g('emplacement')],
+      ['Type de bien', g('type_de_bien')],
+      ['Surface', g('surface')],
+      ['Délai souhaité', g('delai')],
+    ]);
+    if(g('description')){
+      L.push('SON MESSAGE');
+      g('description').split('\n').forEach(l => L.push('  ' + l));
+      L.push('');
+    }
+    L.push('------------------------------------');
+    L.push('Envoyé depuis le site N\'KO-FINITION');
+    return L.join('\n');
+  }
+
   form.addEventListener('submit',async e=>{
     e.preventDefault();
-    try{const r=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+    const fd = new FormData(form);
+    const nom = fd.get('nom') || 'Un client';
+    const com = fd.get('commune');
+
+    // on n'envoie que l'essentiel : une fiche formatée + les champs utiles
+    const envoi = new FormData();
+    envoi.append('_subject', 'Nouvelle demande de devis — ' + nom + (com ? ' (' + com + ')' : ''));
+    envoi.append('_gotcha', fd.get('_gotcha') || '');
+    envoi.append('Demande', ficheDevis(fd));
+    envoi.append('email', fd.get('email') || '');
+
+    try{const r=await fetch(form.action,{method:'POST',body:envoi,headers:{'Accept':'application/json'}});
       if(r.ok){document.getElementById('success').classList.add('on');form.reset();window.scrollTo({top:0,behavior:'smooth'});}
       else alert("Une erreur est survenue. Écrivez-nous directement à nkofinition@gmail.com.");
     }catch{alert("Une erreur est survenue. Vérifiez votre connexion.");}
   });
 </script>
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-<script>if(window.netlifyIdentity){window.netlifyIdentity.on("init",u=>{if(!u){window.netlifyIdentity.on("login",()=>{document.location.href="/admin/";});}});}</script>
 </body>
 </html>

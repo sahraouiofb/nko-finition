@@ -1,6 +1,20 @@
+# Authentification DecapBridge (remplace Netlify Identity, déprécié)
 backend:
   name: git-gateway
+  repo: sahraouiofb/nko-finition
   branch: main
+  identity_url: https://auth.decapbridge.com/sites/85d6c60f-8816-4460-8ab4-5e10c29cd9c7
+  gateway_url: https://gateway.decapbridge.com
+  # messages de commit en français, avec l'auteur de la modification
+  commit_messages:
+    create: 'Ajout {{collection}} "{{slug}}" — {{author-name}}'
+    update: 'Modification {{collection}} "{{slug}}" — {{author-name}}'
+    delete: 'Suppression {{collection}} "{{slug}}" — {{author-name}}'
+    uploadMedia: 'Ajout photo "{{path}}" — {{author-name}}'
+    deleteMedia: 'Suppression photo "{{path}}" — {{author-name}}'
+    openAuthoring: '{{message}} — {{author-name}}'
+
+site_url: https://nko-finition.pages.dev
 
 media_folder: "photos/realisations"
 public_folder: "/photos/realisations"
